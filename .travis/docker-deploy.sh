@@ -41,6 +41,4 @@ docker tag ${REPO_NAME} ${REPO_NAME}:${TRAVIS_BRANCH}
 docker tag ${REPO_NAME} ${REPO_NAME}:latest
 
 # ..and push
-docker push ${REPO_NAME}:latest
-docker push ${REPO_NAME}:${TRAVIS_TAG}
-docker push ${REPO_NAME}:${TRAVIS_BRANCH}
+docker push ${REPO_NAME}
