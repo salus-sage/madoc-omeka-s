@@ -87,6 +87,7 @@ ENV COMPOSER_HOME "/srv/omeka/.composer"
 RUN npm install && \
     ./node_modules/gulp/bin/gulp.js init && \
     npm cache clean -f && \
+    composer update --working-dir=/srv/omeka --lock --optimize-autoloader --no-dev --prefer-source --no-interaction && \
     rm -Rf ./node_modules/ /srv/omeka/.npm /srv/omeka/.composer-cache /srv/omeka/.composer /srv/omeka/build
 
 USER root
