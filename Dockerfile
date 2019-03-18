@@ -57,7 +57,7 @@ RUN groupadd www-data && \
 
 ENV OMEKA_FORK "digirati-co-uk"
 ENV OMEKA_BRANCH "bugfix/7.2-rebase-1.3.0"
-ENV TAR_FILE_NAME "7.2-rebase-1.3.0";
+ENV TAR_FILE_NAME "7.2-rebase-1.3.0"
 
 # Download our fork.
 ADD --chown=www-data:www-data https://github.com/${OMEKA_FORK}/omeka-s/archive/${OMEKA_BRANCH}.tar.gz /srv/omeka/
