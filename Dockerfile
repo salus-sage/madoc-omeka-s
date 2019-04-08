@@ -32,6 +32,8 @@ RUN dnf update -y && \
         binutils \
         wget \
         git \
+        sendmail \
+        sendmail-cf \
         composer && \
     pecl install imagick && \
     dnf clean all && \
