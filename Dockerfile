@@ -93,8 +93,6 @@ RUN npm install && \
     npm cache clean -f && \
     rm -Rf ./node_modules/ /srv/omeka/.npm /srv/omeka/.composer-cache /srv/omeka/.composer /srv/omeka/build
 
-RUN composer update --lock --optimize-autoloader --no-dev --prefer-source --no-interaction
-
 USER root
 RUN mkdir -p /run/php-fpm && \
     mkdir -p /run/supervisor && \
