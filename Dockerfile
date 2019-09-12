@@ -59,9 +59,9 @@ RUN groupadd www-data && \
 #    curl -o /srv/omeka/composer.lock -sSL "https://raw.githubusercontent.com/digirati-co-uk/omeka-s/bugfix/7.2-rebase-1.3.0/composer.lock" && \
 #    composer update --working-dir=/srv/omeka --lock --optimize-autoloader --no-dev --prefer-source --no-interaction
 
-ENV OMEKA_FORK "digirati-co-uk"
-ENV OMEKA_BRANCH "bugfix/7.2-rebase-1.3.0"
-ENV TAR_FILE_NAME "7.2-rebase-1.3.0"
+ENV OMEKA_FORK "omeka"
+ENV OMEKA_BRANCH "v2.0.2"
+ENV TAR_FILE_NAME "v2.0.2"
 
 # Download our fork.
 ADD --chown=www-data:www-data https://github.com/${OMEKA_FORK}/omeka-s/archive/${OMEKA_BRANCH}.tar.gz /srv/omeka/
