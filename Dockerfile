@@ -5,38 +5,38 @@ LABEL maintainer="Stephen Fraser <stephen.fraser@digirati.com>"
 
 RUN dnf update -y && \
     dnf install -y \
-    nodejs \
-    php-common \
-    php-cli \
-    php-devel \
-    php-fpm \
-    php-mysqlnd \
-    php-xml \
-    php-gd \
-    php-imap \
-    php-intl \
-    php-pcntl \
-    php-zip \
-    php-mbstring \
-    php-mcrypt \
-    php-openssl \
-    php-pdo \
-    php-soap \
-    php-opcache \
-    php-json \
-    php-pear \
-    php-apcu \
-    ImageMagick \
-    ImageMagick-devel \
-    nginx \
-    supervisor \
-    make \
-    binutils \
-    wget \
-    git \
-    sendmail \
-    sendmail-cf \
-    composer && \
+        nodejs \
+        php-common \
+        php-cli \
+        php-devel \
+        php-fpm \
+        php-mysqlnd \
+        php-xml \
+        php-gd \
+        php-imap \
+        php-intl \
+        php-pcntl \
+        php-zip \
+        php-mbstring \
+        php-mcrypt \
+        php-openssl \
+        php-pdo \
+        php-soap \
+        php-opcache \
+        php-json \
+        php-pear \
+        php-apcu \
+        ImageMagick \
+        ImageMagick-devel \
+        nginx \
+        supervisor \
+        make \
+        binutils \
+        wget \
+        git \
+        sendmail \
+        sendmail-cf \
+        composer && \
     pecl install imagick && \
     dnf clean all && \
     rm -Rf /var/cache/dnf
