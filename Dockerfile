@@ -1,40 +1,42 @@
 FROM fedora:28
 
-MAINTAINER "Gary Tierney" <gary.tierney@digirati.com>
-MAINTAINER "Stephen Fraser" <stephen.fraser@digirati.com>
+LABEL maintainer="Gary Tierney <gary.tierney@digirati.com>"
+LABEL maintainer="Stephen Fraser <stephen.fraser@digirati.com>"
 
 RUN dnf update -y && \
     dnf install -y \
-        nodejs \
-        php-common \
-        php-cli \
-        php-devel \
-        php-fpm \
-        php-mysqlnd \
-        php-xml \
-        php-gd \
-        php-imap \
-        php-intl \
-        php-pcntl \
-        php-zip \
-        php-mbstring \
-        php-pdo \
-        php-soap \
-        php-opcache \
-        php-json \
-        php-pear \
-        php-apcu \
-        ImageMagick \
-        ImageMagick-devel \
-        nginx \
-        supervisor \
-        make \
-        binutils \
-        wget \
-        git \
-        sendmail \
-        sendmail-cf \
-        composer && \
+    nodejs \
+    php-common \
+    php-cli \
+    php-devel \
+    php-fpm \
+    php-mysqlnd \
+    php-xml \
+    php-gd \
+    php-imap \
+    php-intl \
+    php-pcntl \
+    php-zip \
+    php-mbstring \
+    php-mcrypt \
+    php-openssl \
+    php-pdo \
+    php-soap \
+    php-opcache \
+    php-json \
+    php-pear \
+    php-apcu \
+    ImageMagick \
+    ImageMagick-devel \
+    nginx \
+    supervisor \
+    make \
+    binutils \
+    wget \
+    git \
+    sendmail \
+    sendmail-cf \
+    composer && \
     pecl install imagick && \
     dnf clean all && \
     rm -Rf /var/cache/dnf
@@ -90,6 +92,8 @@ RUN npm install && \
     ./node_modules/gulp/bin/gulp.js init && \
     npm cache clean -f && \
     rm -Rf ./node_modules/ /srv/omeka/.npm /srv/omeka/.composer-cache /srv/omeka/.composer /srv/omeka/build
+
+RUN composer update --lock --optimize-autoloader --no-dev --prefer-source --no-interaction
 
 USER root
 RUN mkdir -p /run/php-fpm && \
