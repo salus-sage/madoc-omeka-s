@@ -1,7 +1,7 @@
 FROM fedora:28
 
-MAINTAINER "Gary Tierney" <gary.tierney@digirati.com>
-MAINTAINER "Stephen Fraser" <stephen.fraser@digirati.com>
+LABEL maintainer="Gary Tierney <gary.tierney@digirati.com>"
+LABEL maintainer="Stephen Fraser <stephen.fraser@digirati.com>"
 
 RUN dnf update -y && \
     dnf install -y \
@@ -18,6 +18,8 @@ RUN dnf update -y && \
         php-pcntl \
         php-zip \
         php-mbstring \
+        php-mcrypt \
+        php-openssl \
         php-pdo \
         php-soap \
         php-opcache \
